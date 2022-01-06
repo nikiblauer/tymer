@@ -10,14 +10,14 @@ import "../../styles/tasklist.css";
 function Tasklist(props){
 
     let [tasks, setTasks] = useState([
-        {title: "To Add a new Task ->"},
-        {title: "Create title ->"},
-        {title: "Click on ADD NEW."}
+        {id: Math.floor(Math.random() * 1000000000), title: "To Add a new Task ->"},
+        {id: Math.floor(Math.random() * 1000000000), title: "Create title ->"},
+        {id: Math.floor(Math.random() * 1000000000), title: "Click on ADD NEW."}
     ]);
 
     function createList(task, index) {
 
-        return <TaskField key={index}>{task.title}</TaskField>
+        return <TaskField onDelete={deleteTask} id={task.id} key={index}>{task.title}</TaskField>
     }
 
     function addNewTask(task) {
@@ -26,6 +26,16 @@ function Tasklist(props){
         setTasks((prev) => {
             return [...prev, task];
         });
+    }
+
+    function deleteTask(id){
+        setTasks((prev) => {
+            return prev.filter(function(value, index, arr){ 
+                return id != value.id;
+            });
+        });
+
+        console.log("Deleted: " + id);
     }
 
 

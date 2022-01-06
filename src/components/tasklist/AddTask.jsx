@@ -16,7 +16,7 @@ function AddTask(props){
 
     
     function addNew(){
-        const task = {title: inputText};
+        const task = {id: Math.floor(Math.random() * 1000000000), title: inputText};
 
         props.addNew(task);
     }
