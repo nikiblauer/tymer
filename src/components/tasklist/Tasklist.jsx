@@ -5,7 +5,7 @@ import TasklistHeading from "./TasklistHeading";
 import TaskField from "./TaskField";
 import { useState } from "react/cjs/react.development";
 import AddTask from "./AddTask";
-
+import "../../styles/tasklist.css";
 
 function Tasklist(props){
 

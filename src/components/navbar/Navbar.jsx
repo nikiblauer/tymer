@@ -1,5 +1,6 @@
 import React from "react";
 import { useState } from "react/cjs/react.development";
+import "../../styles/navbar.css";
 
 
 function Navbar(props) {

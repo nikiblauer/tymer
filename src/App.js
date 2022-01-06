@@ -8,8 +8,12 @@ function App(){
   return (
     <div className="app-container">
       <Navbar />
-      <Clock />
-      <Tasklist />
+      <div className="clock-container">
+        <Clock />
+      </div>
+      <div className="tasklist-container">
+        <Tasklist />
+      </div>
     </div>
   );
 }

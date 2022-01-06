@@ -1,0 +1,145 @@
+/**************************************/
+/*TASKLIST*/
+/**************************************/
+
+.tasklist {
+  position: absolute;
+  transform: translate(-50%, -50%);
+  top: 58%;
+  left: 80%;
+
+  width: 315px;
+  height: auto;
+}
+
+@media screen and (max-width: 1320px) {
+  .tasklist {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    top: 140%;
+    left: 50%;
+
+    width: 90%;
+    height: auto;
+  }
+}
+
+.tasklist-heading {
+  color: #41506b;
+
+  font-weight: bolder;
+  font-size: 28px;
+
+  text-align: center;
+
+  margin: 0 0 15px 0;
+}
+
+.list {
+  width: 100%;
+  height: 238px;
+
+  overflow-y: auto;
+
+  /*Hide scrollbar*/
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+.list::-webkit-scrollbar {
+  display: none;
+}
+
+.taskfield {
+  position: relative;
+  width: 100%;
+  height: 60px;
+
+  background-color: #90f6d7;
+
+  border: none;
+  border-radius: 19px;
+  outline: none;
+
+  margin: 8px 0;
+}
+
+.taskfield input {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 15px;
+
+  width: 25px;
+  height: 25px;
+
+  background-color: #fff;
+
+  border: 2px solid #41506b;
+  border-radius: 8px;
+}
+
+.taskfield label {
+  position: absolute;
+  transform: translateY(-50%);
+  top: 50%;
+  left: 70px;
+
+  color: #41506b;
+
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.taskfield input:checked {
+  box-shadow: inset 0px 0px 0px 3px #fff;
+  background-color: #35bcbf;
+}
+
+.add-text {
+  width: 100%;
+  height: 60px;
+  box-sizing: border-box;
+
+  color: #41506b;
+  background-color: #fff;
+  background: linear-gradient(#41506b, #41506b) center bottom 15px /
+    calc(100% - 50px) 2px no-repeat;
+
+  border: 2px solid #41506b;
+  border-radius: 19px;
+  outline: none;
+
+  font-size: 16px;
+  font-weight: bolder;
+
+  text-align: center;
+
+  margin: 8px 0;
+}
+
+.add-text::placeholder {
+  opacity: 75%;
+}
+
+.add-btn {
+  width: 100%;
+  height: 60px;
+
+  color: #90f6d7;
+  background-color: #41506b;
+
+  border: none;
+  border-radius: 19px;
+  outline: none;
+
+  font-size: 18px;
+  font-weight: bolder;
+
+  margin: 0 0 20px 0;
+}
