@@ -75,6 +75,8 @@
   outline: none;
 
   margin: 8px 0;
+
+  cursor: pointer;
 }
 
 .taskfield input {
@@ -101,11 +103,14 @@
   transform: translateY(-50%);
   top: 50%;
   left: 70px;
+  max-width: 70%;
 
   color: #41506b;
 
   font-size: 18px;
   font-weight: bold;
+
+  cursor: pointer;
 }
 
 .taskfield input:checked {
@@ -174,6 +179,8 @@
   font-weight: bolder;
 
   margin: 0 0 20px 0;
+
+  cursor: pointer;
 }
 
 /*fade effect for checked tasks*/

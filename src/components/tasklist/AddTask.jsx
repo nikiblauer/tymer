@@ -13,6 +13,9 @@ function AddTask(props){
         setInputText(text);
     }
 
+    function resetInputText(){
+        setInputText("");
+    }
 
     
     function addNew(){
@@ -23,8 +26,8 @@ function AddTask(props){
 
     return (
         <div>
-            <AddTextInput handleChange={handleChange}/>
-            <AddButton onClick={addNew}>ADD NEW</AddButton>
+            <AddTextInput handleChange={handleChange} text={inputText}/>
+            <AddButton onClick={() => {addNew(); resetInputText();}}>ADD NEW</AddButton>
         </div>
     );
 }

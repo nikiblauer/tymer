@@ -70,6 +70,8 @@ input[type="radio"] {
 
   margin: 1px auto;
   padding: 1px 0;
+
+  cursor: pointer;
 }
 
 input:checked + .workstate-btn {
@@ -100,6 +102,8 @@ input:checked + .workstate-btn {
   outline: none;
 
   margin: 2px;
+
+  cursor: pointer;
 }
 
 .control-btn:active {

@@ -1,66 +1,103 @@
-/**************************************/
-/* NAVBAR */
-/**************************************/
-.topnav {
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+
+  height: 70px;
+
   background-color: #263849;
 
-  overflow: hidden;
-
-  z-index: 100;
+  padding: 0 8%;
 }
 
-.topnav a {
-  display: block;
-  float: left;
-
+header h1 {
   color: #35bcbf;
+  cursor: pointer;
+}
 
+header ul {
+  list-style: none;
   text-align: center;
+  background-color: #263849;
+}
+
+nav li {
+  display: inline-block;
+  margin: 0 20px;
+}
+
+nav li:nth-child(1) {
+  margin-left: 0;
+}
+
+nav li:last-child {
+  margin-right: 0;
+}
+
+header a {
+  color: #35bcbf;
   text-decoration: none;
-
-  font-size: 17px;
-
-  padding: 30px 16px;
 }
 
-.topnav a.active {
-  /* background-color: #fff; */
-}
-
-/* Hide the link that should open and close the topnav on small screens */
-.topnav .icon {
+#hamburger-icon {
   display: none;
+  margin: auto 0;
+  cursor: pointer;
 }
 
-/**************************************/
-/*NAVBAR-RESPONSIVENESS*/
-/**************************************/
+/*for the hamburger icon bars*/
+#hamburger-icon .bar {
+  width: 35px;
+  height: 3px;
+  background-color: #fff;
+  margin: 6px 0;
+  transition: 0.4s;
+}
 
-/* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (orientation: portrait) {
-  .topnav a:not(:first-child) {
+.open .bar1 {
+  -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+  transform: rotate(-45deg) translate(-6px, 6px);
+}
+
+.open .bar2 {
+  opacity: 0;
+}
+
+.open .bar3 {
+  -webkit-transform: rotate(45deg) translate(-6px, -8px);
+  transform: rotate(45deg) translate(-6px, -8px);
+}
+
+.open .mobile-menu {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.mobile-menu {
+  display: none;
+  position: absolute;
+  top: 70px;
+  left: 0;
+  width: 100%;
+
+  padding-bottom: 40px;
+  padding-left: 0;
+
+  z-index: 10;
+}
+
+.mobile-menu li {
+  margin: 20px 0;
+}
+
+@media only screen and (max-width: 600px) {
+  header nav {
     display: none;
   }
-  .topnav a.icon {
-    float: right;
-    display: block;
-  }
-}
 
-/* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (orientation: portrait) {
-  .topnav.responsive {
-    position: relative;
-  }
-  .topnav.responsive a.icon {
-    position: absolute;
-    right: 0;
-    top: 0;
-  }
-  .topnav.responsive a {
-    float: none;
+  #hamburger-icon {
     display: block;
-
-    text-align: left;
   }
 }

@@ -1,9 +1,7 @@
 import React from "react";
-import AddTextInput from "./AddTextInput";
-import AddButton from "./AddButton";
 import TasklistHeading from "./TasklistHeading";
 import TaskField from "./TaskField";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 import AddTask from "./AddTask";
 import "../../styles/tasklist.css";
 
@@ -17,7 +15,7 @@ function Tasklist(props){
 
     function createList(task, index) {
 
-        return <TaskField onDelete={deleteTask} id={task.id} key={index}>{task.title}</TaskField>
+        return <TaskField onDelete={deleteTask} id={task.id} key={task.id}>{task.title}</TaskField>
     }
 
     function addNewTask(task) {
@@ -31,7 +29,7 @@ function Tasklist(props){
     function deleteTask(id){
         setTasks((prev) => {
             return prev.filter(function(value, index, arr){ 
-                return id != value.id;
+                return id !== value.id;
             });
         });
 

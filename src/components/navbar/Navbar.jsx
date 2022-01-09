@@ -1,27 +1,32 @@
 import React from "react";
-import { useState } from "react/cjs/react.development";
 import "../../styles/navbar.css";
+import NavbarHeading from "./NavbarHeading";
+import Menu from "./Menu";
+import MobileMenu from "./MobileMenu";
+import NavigationItem from "./NavigationItem";
+
+
 
 
 function Navbar(props) {
 
-    let [collapsed, setCollapsed] = useState(true);
-
-    function toggle(){
-        setCollapsed((prev) => {return !prev})
-    }
+    
 
     return (
-        <div className={(collapsed) ? "topnav" : "topnav responsive"} id="myTopnav">
-            <a href="javascript:void(0);" className="active">HOME</a>
-            <a href="javascript:void(0);">TYMER</a>
-            <a href="javascript:void(0);">ABOUT</a>
-            <a href="javascript:void(0);">SETTINGS</a>
+        <header>
+            <NavbarHeading />
+            <Menu>
+                <NavigationItem href={"#"}>ABOUT</NavigationItem>
+                <NavigationItem href={"#"}>CONTACT</NavigationItem>
+                <NavigationItem href={"#"}>SETTINGS</NavigationItem>
+            </Menu>
+            <MobileMenu>
+                <NavigationItem href={"#"}>ABOUT</NavigationItem>
+                <NavigationItem href={"#"}>CONTACT</NavigationItem>
+                <NavigationItem href={"#"}>SETTINGS</NavigationItem>
+            </MobileMenu>
 
-            <a href="javascript:void(0);" className="icon" onClick={toggle}>
-                <i className="fa fa-bars"></i>
-            </a>
-        </div>
+       </header>
     );
 }
 
