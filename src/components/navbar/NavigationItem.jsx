@@ -1,9 +1,10 @@
 import React from "react";
+import { Link } from "react-router-dom";
 
 
 function NavigationItem(props) {
     return (
-        <li className="grow"><a href={props.href}>{props.children}</a></li>
+        <li className="grow"><Link to={props.to}>{props.children}</Link></li>
     );
 }
 

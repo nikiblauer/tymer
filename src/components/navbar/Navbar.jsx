@@ -14,16 +14,16 @@ function Navbar(props) {
 
     return (
         <header>
-            <NavbarHeading />
+            <NavbarHeading/>
             <Menu>
-                <NavigationItem href={"#"}>ABOUT</NavigationItem>
-                <NavigationItem href={"#"}>CONTACT</NavigationItem>
-                <NavigationItem href={"#"}>SETTINGS</NavigationItem>
+                <NavigationItem to="about">ABOUT</NavigationItem>
+                <NavigationItem to="/contact">CONTACT</NavigationItem>
+                <NavigationItem to="/settings">SETTINGS</NavigationItem>
             </Menu>
             <MobileMenu>
-                <NavigationItem href={"#"}>ABOUT</NavigationItem>
-                <NavigationItem href={"#"}>CONTACT</NavigationItem>
-                <NavigationItem href={"#"}>SETTINGS</NavigationItem>
+                <NavigationItem to="about">ABOUT</NavigationItem>
+                <NavigationItem to="/contact">CONTACT</NavigationItem>
+                <NavigationItem to="/settings">SETTINGS</NavigationItem>
             </MobileMenu>
 
        </header>
