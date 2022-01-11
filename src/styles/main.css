@@ -3,6 +3,17 @@
   font-family: "Roboto", sans-serif;
 }
 
+.page-heading {
+  color: #41506b;
+
+  font-weight: bolder;
+  font-size: 28px;
+
+  text-align: center;
+
+  margin: 8% 0 2%;
+}
+
 /**************************************/
 /* ANIMATIONS */
 /**************************************/

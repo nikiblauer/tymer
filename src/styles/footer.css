@@ -1,0 +1,27 @@
+.footer {
+  position: absolute;
+  bottom: 50px;
+  left: 50%;
+  transform: translateX(-50%);
+
+  text-align: center;
+}
+
+.copyright-text {
+  text-align: center;
+  margin: auto;
+  color: lightgray;
+}
+
+.social {
+  text-decoration: none;
+  color: #263849;
+  margin: 0 10px;
+}
+
+.social-links {
+  font-size: 28px;
+
+  text-align: center;
+  margin: 10px 0;
+}

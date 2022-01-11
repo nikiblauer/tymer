@@ -1,11 +1,20 @@
 import React from "react";
+import PageHeading from "./components/shared/PageHeading";
 
+import "./styles/about.css";
+
+import Footer from "./components/footer/Footer";
 
 
 function AboutPage(){
     return (
       <div>      
-        <h1>AboutPage</h1>
+        <PageHeading>ABOUT</PageHeading>
+        <p className="about-text">
+          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+        </p>
+
+        <Footer />
       </div>
   
     );

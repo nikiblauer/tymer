@@ -17,12 +17,12 @@ function Navbar(props) {
             <NavbarHeading/>
             <Menu>
                 <NavigationItem to="about">ABOUT</NavigationItem>
-                <NavigationItem to="/contact">CONTACT</NavigationItem>
+                {/* <NavigationItem to="/contact">CONTACT</NavigationItem> */}
                 <NavigationItem to="/settings">SETTINGS</NavigationItem>
             </Menu>
             <MobileMenu>
                 <NavigationItem to="about">ABOUT</NavigationItem>
-                <NavigationItem to="/contact">CONTACT</NavigationItem>
+                {/* <NavigationItem to="/contact">CONTACT</NavigationItem> */}
                 <NavigationItem to="/settings">SETTINGS</NavigationItem>
             </MobileMenu>
 

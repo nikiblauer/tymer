@@ -1,11 +1,12 @@
 import React from "react";
-
-
+import PageHeading from "./components/shared/PageHeading";
+import Settings from "./components/settings/Settings";
 
 function SettingsPage(){
     return (
-      <div>      
-        <h1>SettingsPage</h1>
+      <div className="settings-page">      
+        <PageHeading>SETTINGS</PageHeading>
+        <Settings />
       </div>
   
     );
