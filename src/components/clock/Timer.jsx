@@ -6,9 +6,19 @@ import TimerDisplay from "./TimerDisplay";
 
 function Timer(props) {
     
+    let workTime = localStorage.getItem("worktime");
+    let breakTime = localStorage.getItem("breaktime");
+
+    if(workTime === null){
+        workTime = "25:00";
+    }
+    if(breakTime === null){
+        breakTime = "05:00";
+    }
+
 
     
-    let [timerSeconds, setTimerSeconds] =  useState(time2seconds("25:00"));
+    let [timerSeconds, setTimerSeconds] =  useState(time2seconds(workTime));
     let [timerInterval, setTimerInterval] = useState(null);
     let [workState, setWorkState] = useState("work");
 
@@ -83,11 +93,11 @@ function Timer(props) {
         if(eventID === "work"){
             setWorkState("work");
             stopCountDown();
-            setTimerSeconds(time2seconds("25:00"));
+            setTimerSeconds(time2seconds(workTime));
         } else if (eventID==="break") {
             setWorkState("break");
             stopCountDown();
-            setTimerSeconds(time2seconds("5:00"));
+            setTimerSeconds(time2seconds(breakTime));
         }
 
     }

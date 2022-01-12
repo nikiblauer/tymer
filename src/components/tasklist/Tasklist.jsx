@@ -7,11 +7,18 @@ import "../../styles/tasklist.css";
 
 function Tasklist(props){
 
-    let [tasks, setTasks] = useState([
-        {id: Math.floor(Math.random() * 1000000000), title: "To Add a new Task ->"},
-        {id: Math.floor(Math.random() * 1000000000), title: "Create title ->"},
-        {id: Math.floor(Math.random() * 1000000000), title: "Click on ADD NEW."}
-    ]);
+    let storedTasklist = JSON.parse(localStorage.getItem("tasklist"));
+    if(storedTasklist === null){
+        storedTasklist = [{id: Math.floor(Math.random()*10000000000), title: "To add a new Task ->"},
+        {id: Math.floor(Math.random()*10000000000), title: "Create title ->"},
+        {id: Math.floor(Math.random()*10000000000), title: "Click on ADD NEW"}
+    ];
+
+    localStorage.setItem("tasklist", JSON.stringify(storedTasklist));
+    }
+
+
+    let [tasks, setTasks] = useState(storedTasklist);
 
     function createList(task, index) {
 
@@ -22,15 +29,23 @@ function Tasklist(props){
         console.log(task);
 
         setTasks((prev) => {
-            return [...prev, task];
+            let newTasks = [...prev, task];
+            
+            localStorage.setItem("tasklist", JSON.stringify(newTasks));
+            
+            return newTasks;
         });
     }
 
     function deleteTask(id){
         setTasks((prev) => {
-            return prev.filter(function(value, index, arr){ 
+            let newTasks =  prev.filter(function(value, index, arr){ 
                 return id !== value.id;
             });
+
+            localStorage.setItem("tasklist", JSON.stringify(newTasks));
+
+            return newTasks;
         });
 
         console.log("Deleted: " + id);

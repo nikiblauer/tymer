@@ -8,8 +8,20 @@ import { useState } from "react";
 
 function Settings(props){
 
-    let [workTime, setWorkTime] = useState("25:00");
-    let [breakTime, setBreakTime] = useState("05:00");
+    let storedWorkTime = localStorage.getItem("worktime");
+    let storedBreakTime = localStorage.getItem("breaktime");
+
+    if(storedWorkTime === null){
+        storedWorkTime = "25:00";
+    }
+    if(storedBreakTime === null){
+        storedBreakTime = "05:00";
+    }
+
+
+    let [workTime, setWorkTime] = useState(storedWorkTime);
+    let [breakTime, setBreakTime] = useState(storedBreakTime);
+    let [saved, setSaved] = useState(false);
 
     function handleChange(event){
         const name = event.target.name;
@@ -24,7 +36,14 @@ function Settings(props){
     }
 
     function save(event){
-        console.log("Saved");
+        localStorage.setItem("worktime", workTime);
+        localStorage.setItem("breaktime", breakTime);
+
+
+        console.log("Saved: ");
+        console.log("WORK TIME: " + workTime);
+        console.log("BREAK TIME: " + breakTime);
+        setSaved(true);
     }
 
 
@@ -41,6 +60,7 @@ function Settings(props){
             </div>
 
             <button className="save-btn grow" onClick={save}>SAVE</button>
+            <p style={{visibility: saved ? "visible" : "hidden", paddingTop: "-5px", paddingBottom: "5px", color: "#A9A9AC"}}>Settings saved!</p>
         </div>
     );
   }
