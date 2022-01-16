@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import TrashImg from "../../images/trash.png";
+import TrashImg from "../../media/trash.png";
 
 function TaskField(props){
 

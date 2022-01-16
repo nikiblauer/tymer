@@ -11,7 +11,7 @@ function AboutPage(){
       <div>      
         <PageHeading>ABOUT</PageHeading>
         <p className="about-text">
-          Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet.
+          TYMER is a REACT web application that enables you to set a time limit for your tasks and also for your breaks inbetween. In addition, there is also a tasklist functionality where you can keep track of your current and upcoming tasks.
         </p>
 
         <Footer />

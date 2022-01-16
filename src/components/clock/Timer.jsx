@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import WorkStateButtonGroup from "./WorkStateButtonGroup";
 import ControlButton from "./ControlButton";
 import TimerDisplay from "./TimerDisplay";
+import ClockAlarm from "../../media/clock-alarm.mp3";
+
 
 
 function Timer(props) {
@@ -21,18 +23,24 @@ function Timer(props) {
     let [timerSeconds, setTimerSeconds] =  useState(time2seconds(workTime));
     let [timerInterval, setTimerInterval] = useState(null);
     let [workState, setWorkState] = useState("work");
-
+    
     function countDown() {
         
 
         setTimerSeconds((prev) => {
             if((prev-1) < 0){
-                stopCountDown(); //This apparently does not stop the intervall.
+                let alarmAudio = new Audio(ClockAlarm);
+                alarmAudio.play();
+                stopCountDown();
+    
+                
                 return 0;
             } else {
                 return (prev-1);
             }
         });
+
+
     }
 
     function startCountDown()  {
@@ -41,21 +49,27 @@ function Timer(props) {
 
 
 
-        if(timerInterval === null){
+        if((timerInterval === null) && (timerSeconds !== 0)){
             setTimerSeconds(() => {
                 return seconds;
             });
-            setTimerInterval(setInterval(countDown, 1000));
+            const interval = setInterval(countDown, 1000)
+            setTimerInterval(interval);
         } else {
-            
+           
         }
     }
 
     function stopCountDown(){
-        clearInterval(timerInterval);
         setTimerInterval(null);    
 
-        console.log("stopped " + timerInterval);
+        const interval_id = setInterval(function(){}, Number.MAX_SAFE_INTEGER);
+
+        // Clear any timeout/interval up to that id
+        for (let i = 1; i < interval_id; i++) {
+            window.clearInterval(i);
+        }
+
     }
 
     function time2seconds(time){
@@ -88,7 +102,7 @@ function Timer(props) {
 
     function changeWorkState(event){
         
-        const eventID = event.target.id;
+        const eventID = event;
 
         if(eventID === "work"){
             setWorkState("work");
